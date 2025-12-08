@@ -31,6 +31,11 @@ a:active {
   color: inherit !important;
   text-decoration: none !important;
 }
+.menu {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px;
+}
 
 p {
   font-family: sans-serif;
@@ -69,7 +74,12 @@ summary {
 summary::-webkit-details-marker {
   display: initial;
 }
-
+summary::-webkit-details-marker {
+    display: none;
+}
+summary {
+    list-style: none;
+}
 /* details는 block으로 */
 details {
   width: 100%;
