@@ -1,76 +1,106 @@
-		*{
- margin : 0;
- padding: 0;
- box-sizing: border-box;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 30px;
-  margin-left: 100px;
-  background-color: ;
-  word-break: keep-all;
+  font-family: sans-serif;
 }
 
+/* h1 중앙 상단 고정 */
 h1 {
-  font-family: sans-serif;
-  font-size: 14pt;
-  text-align: center;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Courier New;
+  font-size: 15pt;
   font-weight: 500;
+  z-index: 1500;
 }
+
 .no-link-style {
-  color: inherit;
   text-decoration: none;
-}
-.no-link-style:visited {
   color: inherit;
 }
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit !important;
-  text-decoration: none !important;
+
+/* h1 아래 가로선 */
+.top-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;     /* h1이 들어갈 공간 + 원래 선 위치 */
+  background: white;
+  z-index: 1400;
+  border-bottom: 1px solid black;
+  box-shadow: inset 0 -1px 0 white,  /* 안쪽 흰색 */
+              inset 0 -2px 0 black;  /* 바깥 검정 */
 }
+
+
+/* 메뉴 왼쪽 고정 */
 .menu {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 20px;
-}
-
-p {
-  font-family: sans-serif;
-  line-height: 20pt;
-  font-size: 9pt;
-  font-weight: 500;
-}
-
-li {
-  font-family: sans-serif;
-  font-size: 12px;
-  margin: 5px;
-}
-
-.nobullet {
-  list-style: none;
-  font-size: 12px;
-  line-height: 13pt;
-  font-weight: 500;
-}
-
-/* 메뉴 정렬 */
-.menu {
+  position: fixed;
+  top: 80px;
+  left: 20px;
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  display: block !important;
+  flex-direction: column;
+  gap: 18px;
+  font-family: "Courier New", monospace;
+  z-index: 1200;
 }
 
-/* summary 기본 스타일 복구 */
-summary {
-  font-size: 15px;
-  cursor: pointer;
+/* 메뉴 글씨 스타일 */
+.menu a {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  padding-left: 0;
+  margin-left: 0;
 }
 
+/* 메뉴 오른쪽 전체 세로선 */
+.menu::after {
+  content: "";
+  position: fixed;
+  top: 70px;  /* top-line 아래 */
+  left: 120px;
+
+  width: 3px;                /* ★ 꼭 필요! 줄 너비 */
+  height: calc(100vh - 70px);
+
+  background: white;         /* 안쪽 흰색 */
+
+  /* 테두리 효과 */
+  box-shadow:
+    inset -1px 0 0 black,    /* 오른쪽 검정 테두리 */
+    inset -2px 0 0 white,    /* 안쪽 흰색 */
+    inset 1px 0 0 black;     /* 왼쪽 검정 테두리 */
+
+  z-index: 1200;
+}
+/* 메인픽 중앙 정렬 */
+.mainpic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: auto;
+  z-index: -200;
+}
+
+/* 기본 이미지 hover (mainpic 제외) */
+img:hover {
+  opacity: .5;
+}
+
+.mainpic:hover {
+  opacity: 1 !important;
+}
 summary::-webkit-details-marker {
   display: initial;
 }
@@ -80,57 +110,17 @@ summary::-webkit-details-marker {
 summary {
     list-style: none;
 }
+
 /* details는 block으로 */
 details {
   width: 100%;
   display: block;
+  font-size: 14px;
 }
 
-/* WORK GRID */
-.work-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  gap: 10px;
-}
 
-.work-grid img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  display: block;
+/* 콘텐츠(각 페이지)는 메뉴 오른쪽에서 시작됩니다 */
+.content {
+  margin-left: 160px;  /* 세로선 오른쪽 공간 */
+  padding: 100px 40px;
 }
-
-/* 기본 이미지 hover */
-img:hover {
-  opacity: .5;
-}
-
-/* MAINPIC (배경 이미지) */
-.mainpic {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 80vw;
-  max-height: 80vh;
-  object-fit: contain;
-  z-index: -100;
-}
-
-.mainpic:hover {
-  opacity: 1 !important;
-}
-
-/* FOOTER 중앙 고정 */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  padding: 10px 20px;
-  background: white;
-}
-
-@media screen and (max-width: 704px) {
