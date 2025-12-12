@@ -140,3 +140,77 @@ footer {
   left: 5px;
   width: 100%;
 }
+
+@media screen and (max-width: 704px) {
+
+  /* body 기본 여백 축소 */
+  body {
+    padding: 15px;
+    margin: 0;
+  }
+
+  /* 제목 h1 위치와 크기 수정 */
+  h1 {
+    top: 10px;
+    font-size: 12pt;
+    transform: translateX(-50%);
+  }
+
+  /* 상단 가로선 변경 */
+  .top-line {
+    height: 45px; 
+  }
+
+  /* 메뉴를 가로 배열로 변경 */
+  .menu {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    flex-direction: row;
+    gap: 15px;
+    background: white;
+    padding: 8px 10px;
+  }
+
+  /* 메뉴 글자 크기 축소 */
+  .menu a, .menu summary {
+    font-size: 12px;
+  }
+
+  /* 메뉴 배경 박스 제거 (모바일에서는 불필요) */
+  .menu-bg {
+    display: none;
+  }
+
+  /* 세로선 제거 */
+  .menu::after {
+    display: none;
+  }
+
+  /* 메인 이미지 화면에 맞게 조정 */
+  .mainpic {
+    width: 90vw !important;   /* 화면 기준 너비 */
+    height: auto;
+    top: 60%;                 /* 세로 위치 조정 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* content 전체 폭 조정 */
+  .content {
+    margin-left: 0;
+    padding: 80px 15px;
+  }
+
+  /* details 글자도 조금 줄이기 */
+  details {
+    font-size: 12px;
+  }
+
+  /* footer 모바일 위치 */
+  footer {
+    font-size: 11px;
+    bottom: 5px;
+    left: 10px;
+  }
+}
