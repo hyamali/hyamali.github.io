@@ -143,74 +143,67 @@ footer {
 
 @media screen and (max-width: 704px) {
 
-  /* body 기본 여백 축소 */
+  /* 기본 정렬 */
   body {
-    padding: 15px;
-    margin: 0;
+    margin: 0 !important;
+    padding: 10px !important;
   }
 
-  /* 제목 h1 위치와 크기 수정 */
+  /* 제목 */
   h1 {
-    top: 10px;
-    font-size: 12pt;
-    transform: translateX(-50%);
+    top: 5px !important;
+    font-size: 12pt !important;
   }
 
-  /* 상단 가로선 변경 */
+  /* 상단 가로선 */
   .top-line {
-    height: 45px; 
+    height: 40px !important;
   }
 
-  /* 메뉴를 가로 배열로 변경 */
+  /* 메뉴를 화면 위쪽 가로로 정렬 */
   .menu {
-    position: fixed;
-    top: 50px;
-    left: 10px;
-    flex-direction: row;
-    gap: 15px;
-    background: white;
-    padding: 8px 10px;
+    top: 45px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+
+    flex-direction: row !important;
+    justify-content: center !important;
+
+    gap: 15px !important;
+    padding: 8px 0 !important;
+
+    background: white !important;
   }
 
-  /* 메뉴 글자 크기 축소 */
-  .menu a, .menu summary {
-    font-size: 12px;
+  /* 메뉴 글자 크기 */
+  .menu a, 
+  .menu summary {
+    font-size: 12px !important;
   }
 
-  /* 메뉴 배경 박스 제거 (모바일에서는 불필요) */
+  /* 메뉴 뒤 흰색 박스 제거 */
   .menu-bg {
-    display: none;
+    display: none !important;
   }
 
   /* 세로선 제거 */
   .menu::after {
-    display: none;
+    display: none !important;
   }
 
-  /* 메인 이미지 화면에 맞게 조정 */
-  .mainpic {
-    width: 90vw !important;   /* 화면 기준 너비 */
-    height: auto;
-    top: 60%;                 /* 세로 위치 조정 */
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* content 전체 폭 조정 */
+  /* content 여백 조정 */
   .content {
-    margin-left: 0;
-    padding: 80px 15px;
+    margin: 0 !important;
+    padding-top: 100px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
-  /* details 글자도 조금 줄이기 */
-  details {
-    font-size: 12px;
-  }
-
-  /* footer 모바일 위치 */
+  /* footer 조정 */
   footer {
-    font-size: 11px;
-    bottom: 5px;
-    left: 10px;
+    font-size: 11px !important;
+    left: 10px !important;
+    bottom: 10px !important;
   }
 }
